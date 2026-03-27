@@ -131,6 +131,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Movement")
 	bool bIsCover = false;
 
+	// WallRun 상태 확인 변수
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Movement")
+	bool bIsWallRunning = false;
+
 
 protected:
 
