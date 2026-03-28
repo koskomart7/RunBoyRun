@@ -58,6 +58,7 @@ protected:
 	void OnPlayerExitClimbState();
 
 	// 입력 인풋 헬퍼 함수 
+	UFUNCTION(BlueprintCallable, Category = "Input")
 	void AddInputMappingContext(UInputMappingContext* ContextToAdd, int32 InPriority);
 	void RemoveInputMappingContext(UInputMappingContext* ContextToRemove);
 
