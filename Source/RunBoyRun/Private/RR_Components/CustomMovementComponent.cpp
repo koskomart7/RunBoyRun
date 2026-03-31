@@ -706,7 +706,7 @@ void UCustomMovementComponent::OnClimbMontageEnded(UAnimMontage* Montage, bool b
         SetMovementMode(MOVE_Walking);
 
         FString ModeName = StaticEnum<EMovementMode>()->GetValueAsString(MovementMode);
-        Debug::Print(TEXT("Now SetMovementMode : ") + ModeName, FColor::Cyan, 5);
+        //Debug::Print(TEXT("Now SetMovementMode : ") + ModeName, FColor::Cyan, 5);
 
     }
 }
@@ -738,30 +738,30 @@ void UCustomMovementComponent::RequestHopping()
     if (DotUp >= 0.9f)
     {
         // 입력 방향과 위쪽 방향이 일치함 (Hop Up)
-        Debug::Print(TEXT("Hop Up"));
+        //Debug::Print(TEXT("Hop Up"));
         HandleHopUp();
 
     }
     else if (DotUp <= -0.9f)
     {
         // 입력 방향과 위쪽 방향이 정반대임 (Hop Down)
-        Debug::Print(TEXT("Hop Down"));
+        //Debug::Print(TEXT("Hop Down"));
         HandleHopDown();
     }
     else if (DotRight >= 0.9f)
     {
        
-        Debug::Print(TEXT("Hop Right"));
+        //Debug::Print(TEXT("Hop Right"));
         HandleHopRight();
     }
     else if (DotRight <= -0.9f)
     {
-        Debug::Print(TEXT("Hop Left"));
+        //Debug::Print(TEXT("Hop Left"));
         HandleHopLeft();
     }
     else
     {
-        Debug::Print(TEXT("Invalid Input Range"));
+        //Debug::Print(TEXT("Invalid Input Range"));
     }
 }
 
@@ -775,13 +775,13 @@ void UCustomMovementComponent::SetMotionWarpTarget(const FName& InWarpTargetName
     if (MotionWarpComp)
     {
         // 디버깅을 위해 위치가 제대로 넘어오는지 로그 출력
-        Debug::Print(FString::Printf(TEXT("Warping to: %s"), *InTargetPosition.ToString()), FColor::Yellow);
+        //Debug::Print(FString::Printf(TEXT("Warping to: %s"), *InTargetPosition.ToString()), FColor::Yellow);
        
         MotionWarpComp->AddOrUpdateWarpTargetFromLocation(InWarpTargetName, InTargetPosition);
     }
     else
     {
-        Debug::Print(TEXT("SetMotionWarpTarget Failed: UMotionWarpingComponent reference is NULL. Check Character Constructor or Build.cs."));
+        //Debug::Print(TEXT("SetMotionWarpTarget Failed: UMotionWarpingComponent reference is NULL. Check Character Constructor or Build.cs."));
         return;
     }
        
