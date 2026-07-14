@@ -142,7 +142,7 @@ void ARunBoyRunCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 
 void ARunBoyRunCharacter::Move(const FInputActionValue& Value)
 {
-	if (!CustomMovementComponent || !bCanMove) return;
+	if (!CustomMovementComponent || !bCanMove || bIsWallSliding) return;
 	
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
