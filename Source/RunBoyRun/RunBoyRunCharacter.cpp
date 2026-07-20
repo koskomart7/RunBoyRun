@@ -142,8 +142,8 @@ void ARunBoyRunCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 
 void ARunBoyRunCharacter::Move(const FInputActionValue& Value)
 {
-	if (!CustomMovementComponent || !bCanMove || bIsWallSliding) return;
-	
+	if (!CustomMovementComponent || !bCanMove) return;
+
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
 
@@ -167,10 +167,15 @@ void ARunBoyRunCharacter::Move(const FInputActionValue& Value)
 		InputMoving();
 		return;
 	}
-	
-	// 일반 지면일 때: 기존 이동 함수 호출
-	DoMove(MovementVector.X, MovementVector.Y);
 
+	// 일반 지면일 때: 기존 이동 함수 호출
+	if (bIsWallSliding)
+	{
+		return;
+	}
+
+	DoMove(MovementVector.X, MovementVector.Y);
+	
 	//HandleGroundMovementInput(Value);
 }
 
