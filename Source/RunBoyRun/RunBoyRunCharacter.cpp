@@ -168,12 +168,12 @@ void ARunBoyRunCharacter::Move(const FInputActionValue& Value)
 		return;
 	}
 
-	// 일반 지면일 때: 기존 이동 함수 호출
+	// WallSliding 제어 변수
 	if (bIsWallSliding)
 	{
 		return;
 	}
-
+	// 일반 지면일 때: 기존 이동 함수 호출
 	DoMove(MovementVector.X, MovementVector.Y);
 	
 	//HandleGroundMovementInput(Value);
