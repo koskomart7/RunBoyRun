@@ -67,6 +67,20 @@ void ARunBoyRunCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	// 모션워핑 유효성 검사로직
+	/*TArray<UMotionWarpingComponent*> MWComps;
+	GetComponents(MWComps);
+	
+	UE_LOG(LogRunBoyRun, Warning, TEXT("[MW-Diag] %s | MotionWarpingComp=%s | MW component count=%d"),
+	*GetName(), *GetNameSafe(MotionWarpingComp), MWComps.Num());
+	
+	for (const UMotionWarpingComponent* Comp : MWComps)
+	{
+		UE_LOG(LogRunBoyRun, Warning, TEXT("[MW-Diag]   - %s (Archetype: %s)"),
+		*GetNameSafe(Comp), *GetNameSafe(Comp->GetArchetype()));
+	}*/
+	
+	
 	// 기본조작 ( 항상 켜저있는 입력 )은 컨트롤러에서 관리하므로 여기에 선언 필요 X 
 	// AddInputMappingContext(DefaultMappingContext,0);
 
