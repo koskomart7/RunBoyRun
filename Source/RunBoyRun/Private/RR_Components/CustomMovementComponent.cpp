@@ -2,6 +2,7 @@
 
 
 #include "RR_Components/CustomMovementComponent.h"
+#include "Engine/EngineTypes.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "RunBoyRunCharacter.h"
 #include "Components/CapsuleComponent.h"
