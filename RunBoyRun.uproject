@@ -48,6 +48,14 @@
 		{
 			"Name": "DaySequence",
 			"Enabled": true
+		},
+		{
+			"Name": "Monolith",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
 		}
+
 	]
 }
