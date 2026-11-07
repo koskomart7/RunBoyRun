@@ -14,7 +14,7 @@ rem ===================================================================
 rem ---- 1) Change these three lines for your PC ----------------------
 if not defined UE_ROOT  set "UE_ROOT=C:\Program Files\Epic Games\UE_5.8"
 if not defined PROJECT  set "PROJECT=C:\Users\SEDUS\Documents\GitHub\RunBoyRun\RunBoyRun.uproject"
-if not defined OUT_DIR  set "OUT_DIR=C:\Builds\RunBoyRun_v0.1"
+if not defined OUT_DIR  set "OUT_DIR=C:\Builds\RunBoyRun_v0.1.1"
 rem ---- Shipping: testers and submission / Development: your own tests
 if not defined CONFIG   set "CONFIG=Shipping"
 rem -------------------------------------------------------------------
